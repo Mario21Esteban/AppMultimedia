@@ -1,7 +1,8 @@
 package com.example.appmultimedia;
 
+import static android.widget.VideoView.*;
+
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -24,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageView;
     private VideoView videoView;
 
-    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         videoView = findViewById(R.id.videoView);
         Button playAudioButton = findViewById(R.id.playAudioButton);
-        Button playVideoButton = findViewById(R.id.videoView);
         Button animateButton = findViewById(R.id.animateButton);
 
         // Verifica y solicita permisos si es necesario
@@ -52,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Configuración para reproducir video
+        // Configura la reproducción del video
+        VideoView videoView = findViewById(R.id.videoView);
+        Button playVideoButton = findViewById(R.id.playVideoButton);
         playVideoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 videoView.start();
             }
         });
+
 
         // Configuración para animar la imagen
         animateButton.setOnClickListener(new View.OnClickListener() {

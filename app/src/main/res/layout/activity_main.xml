@@ -21,13 +21,21 @@
         android:layout_gravity="center_horizontal|top"
         android:layout_marginTop="20dp"/>
 
-    <!-- Botón video -->
     <VideoView
         android:id="@+id/videoView"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_gravity="center_horizontal|center"
         android:layout_marginTop="20dp"/>
+
+    <!-- Botón para reproducir video -->
+    <Button
+        android:id="@+id/playVideoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Video"
+        android:layout_gravity="center_vertical|bottom"
+        android:layout_marginBottom="20dp"/>
 
     <!-- Botón animación -->
     <Button
